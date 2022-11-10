@@ -45,6 +45,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception e)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(e, "An error has occurred while seeding the database");
     }
 }
 
